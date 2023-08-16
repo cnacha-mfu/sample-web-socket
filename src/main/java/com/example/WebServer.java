@@ -11,6 +11,7 @@ public class WebServer {
    
     public static void main(String[] args) {
         int webport = 80;
+        String header = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
          // web server that response Hello using ServerSocket
           try (ServerSocket serverSocket = new ServerSocket(webport)) {
             System.out.println("Server is listening on port " + webport);
@@ -19,7 +20,7 @@ public class WebServer {
                 try (Socket clientSocket = serverSocket.accept();
                      PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true)){
 
-                        out.println("<html><body><h1>Hello From Server</h1></body></html>");
+                        out.println(header + "<html><body><h1>Hello From Server</h1></body></html>");
                     }
                 }
         } catch (IOException e) {
