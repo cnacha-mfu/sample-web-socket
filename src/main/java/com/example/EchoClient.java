@@ -11,15 +11,13 @@ public class EchoClient {
         String serverAddress = "localhost";
         int portNumber = 12345;
 
-        
-
         try (Socket socket = new Socket(serverAddress, portNumber);
-             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
-            
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
+
             String userInput;
-            while ((userInput = stdIn.readLine()) != null) {
+            while (!(userInput = stdIn.readLine()).equals("")) {
                 out.println(userInput);
                 System.out.println("Server response: " + in.readLine());
             }
@@ -27,5 +25,4 @@ public class EchoClient {
             System.err.println("Error occurred: " + e.getMessage());
         }
     }
-} 
-
+}
