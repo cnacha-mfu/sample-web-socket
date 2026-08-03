@@ -16,11 +16,10 @@ public class EchoClient {
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
 
-            String userInput;
-            while (!(userInput = stdIn.readLine()).equals("")) {
-                out.println(userInput);
-                System.out.println("Server response: " + in.readLine());
-            }
+            // TODO: read the user's input from stdIn until an empty line;
+            //       send each line to the server with out.println(...)
+            //       and print the server's reply from in.readLine()
+
         } catch (IOException e) {
             System.err.println("Error occurred: " + e.getMessage());
         }

@@ -13,7 +13,6 @@ public class WebServer {
         // port 8080 is a common choice for a web server during development
         // (port 80 is the real web port but needs admin permission on many systems)
         int webport = 8080;
-        String header = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
         // Web server that responds Hello using ServerSocket
         try (ServerSocket serverSocket = new ServerSocket(webport)) {
             System.out.println("Server is listening on port " + webport);
@@ -23,12 +22,13 @@ public class WebServer {
                         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true)) {
 
-                    // read the first line of the request, e.g. "GET / HTTP/1.1"
-                    String request = in.readLine();
-                    System.out.println("Received request: " + request);
+                    // TODO 1: read the first line of the request with
+                    //         in.readLine() and print it, e.g. "GET / HTTP/1.1"
 
-                    // send the HTTP response: header first, then the HTML body
-                    out.println(header + "<html><body><h1>Hello From Server</h1></body></html>");
+                    // TODO 2: send the HTTP response with out.println(...):
+                    //         header "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n"
+                    //         followed by an HTML body
+
                 }
             }
         } catch (IOException e) {

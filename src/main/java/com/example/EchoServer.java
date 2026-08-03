@@ -7,11 +7,6 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * Hello world!
- *
- */
-
 public class EchoServer {
     public static void main(String[] args) throws IOException {
 
@@ -25,11 +20,9 @@ public class EchoServer {
                 PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-                String inputLine;
-                while ((inputLine = in.readLine()) != null) {
-                    System.out.println("Received from client: " + inputLine);
-                    out.println("Client says: " + inputLine);
-                }
+                // TODO: loop with in.readLine() while it is not null;
+                //       print each received line, then send it back to the
+                //       client with out.println(...)
 
             }
         } catch (IOException e) {

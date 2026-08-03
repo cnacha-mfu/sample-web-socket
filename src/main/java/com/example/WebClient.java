@@ -18,16 +18,12 @@ public class WebClient {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            // send an HTTP GET request, the same way a browser does
-            // a blank line marks the end of the request
-            String request = "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n";
-            out.println(request);
+            // TODO 1: send an HTTP GET request the way a browser does:
+            //         "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n"
 
-            // read every line of the response until the server closes the connection
-            String line;
-            while ((line = in.readLine()) != null) {
-                System.out.println(line);
-            }
+            // TODO 2: read every line of the response with in.readLine()
+            //         until it returns null, and print each line
+
         } catch (IOException e) {
             e.printStackTrace();
         }

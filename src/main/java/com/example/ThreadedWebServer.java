@@ -13,11 +13,11 @@ import java.time.LocalTime;
  *
  * A class that implements Runnable can be run inside a Thread. The code in
  * run() is what the thread executes. Because each server runs in its own
- * thread, one program can run several servers at the same time - here we
- * start two, each listening on a different port.
+ * thread, one program can run several servers at the same time.
  *
- * Run this class, then open http://localhost:9090 and http://localhost:9091
- * in your browser. Each one answers from a different server instance.
+ * Complete main() below, then open http://localhost:9090 and
+ * http://localhost:9091 in your browser. Each one answers from a
+ * different server instance.
  */
 public class ThreadedWebServer implements Runnable {
 
@@ -54,13 +54,10 @@ public class ThreadedWebServer implements Runnable {
     }
 
     public static void main(String[] args) {
-        // create two server objects listening on different ports
-        // and start each one in its own thread
-        Thread server1 = new Thread(new ThreadedWebServer(9090));
-        server1.start();
+        // TODO 1: create a ThreadedWebServer object for port 9090,
+        //         wrap it in a Thread, and start() it
 
-        Thread server2 = new Thread(new ThreadedWebServer(9091));
-        server2.start();
+        // TODO 2: do the same for port 9091
 
         // main() continues immediately - both servers keep running
         // in their own threads until you stop the program
