@@ -1,5 +1,7 @@
 # Sample: Sockets and a Simple Web Server in Java
 
+> **Branches:** the `main` branch has blanks (`// TODO`) that we fill in together in class — see [TODO.md](TODO.md) for the demonstration flow. The finished code for every example is on the [`complete`](https://github.com/cnacha-mfu/sample-web-socket/tree/complete) branch.
+
 These examples show, step by step, how a web server works underneath: it is just a program that listens on a network port with a **socket**, reads a request, and writes a response back.
 
 Study the examples **in this order** — each one adds one new idea. Together they prepare you for the [lab-web-socket](https://github.com/maefahluang-uni/lab-web-socket) lab.
