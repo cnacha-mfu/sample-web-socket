@@ -13,16 +13,14 @@ public class SimpleServer {
             while(true){
                 // accept client connection
                 Socket clientSocket = serverSocket.accept();
-                // read message from client
-                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                // send message to client
+                // read message from client and print it out
+                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 System.out.println("Received from client: " + in.readLine());
-                
+
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        // send message to client
     }
 }
